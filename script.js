@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ====== Personalizador ====== */
+  
   const modeloSelect = document.getElementById("modelo-select");
   const uploadInput = document.getElementById("upload-estampado");
   const scaleRange = document.getElementById("scale-range");
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ====== Catálogo: animación de 3 vistas ====== */
+  
   document.querySelectorAll('.producto-card').forEach(card => {
     const vistas = card.querySelectorAll('.vista');
     let index = 0;
@@ -195,12 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
       interval = setInterval(() => {
         index = (index + 1) % vistas.length;
         mostrarVista(index);
-      }, 300); // cambia cada 0.3s
+      }, 300);
     });
 
     card.addEventListener('mouseleave', () => {
       clearInterval(interval);
-      mostrarVista(0); // vuelve a la frontal
+      mostrarVista(0);
     });
 
     card.addEventListener('click', () => {
@@ -208,4 +208,29 @@ document.addEventListener("DOMContentLoaded", () => {
       mostrarVista(index);
     });
   });
-});
+
+  
+  const pasoTriggers = document.querySelectorAll('[data-paso-trigger]');
+  const pasoCards = document.querySelectorAll('[data-paso-card]');
+  const pasoTexts = document.querySelectorAll('[data-paso-text]');
+  const pasoIndices = document.querySelectorAll('[data-paso-index]');
+
+  function activarPaso(pasoId) {
+    pasoTexts.forEach(el => {
+      el.hidden = true;
+      el.setAttribute('aria-hidden', 'true');
+    });
+    pasoCards.forEach(card => card.classList.remove('zoomed'));
+    pasoTriggers.forEach(btn => btn.classList.remove('active'));
+    pasoIndices.forEach(idx => idx.classList.remove('active'));
+
+    const targetText = document.querySelector(`[data-paso-text="${pasoId}"]`);
+    if (targetText) {
+      targetText.hidden = false;
+      targetText.setAttribute('aria-hidden', 'false');
+    }
+    const targetCard = document.querySelector(`[data-paso-card="${pasoId}"]`);
+    if (targetCard) targetCard.classList.add('zoomed');
+    const targetTrigger = document.querySelector(`[data-paso-trigger="${pasoId}"]`);
+    if (targetTrigger) target
+
