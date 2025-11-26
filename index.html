@@ -2,24 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KARGA Mochilas Personalizadas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KARGA — Diseña tu mochila</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-white text-dark">
+<body class="bg-light">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
     <a class="navbar-brand" href="index.html">
       <img src="recursos/logo blanco.png" alt="Logo KARGA" height="40" />
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menú de navegación">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
         <li class="nav-item"><a class="nav-link" href="catalogo.html">CATÁLOGO</a></li>
         <li class="nav-item"><a class="nav-link" href="personaliza.html">PERSONALIZA</a></li>
         <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
@@ -28,88 +29,188 @@
   </nav>
 
   <!-- Hero -->
-<section class="hero-section d-flex align-items-center text-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center mb-4 mb-md-0">
-        <img src="recursos/frontal.png" alt="Mochila personalizada" class="img-fluid" />
-      </div>
-      <div class="col-md-6 text-center text-md-start">
-        <h1 class="display-5 fw-bold">
-          DISEÑA TU MOCHILA<br>
-          <span class="fw-normal">LLEVA TU ESTILO CONTIGO</span>
-        </h1>
-        <a href="personaliza.html" class="btn btn-dark mt-4 px-4 py-2 rounded-pill">¡EMPIEZA A PERSONALIZAR!</a>
-        <a href="#pasos" class="btn btn-outline-light mt-3 px-4 py-2 rounded-pill">Ver cómo funciona</a>
+  <section class="hero-section d-flex align-items-center text-center text-light">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Diseña tu mochila KARGA</h1>
+      <p class="lead">Personaliza, compra y recibe en tu puerta</p>
+      <div class="d-flex justify-content-center gap-2">
+        <a href="#como-funciona" class="btn btn-outline-light">Cómo funciona</a>
+        <a href="personaliza.html" class="btn btn-dark">Empieza ahora</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Cómo funciona -->
-  <section id="pasos" class="container py-5">
-    <h2 class="text-center mb-4">¿Cómo funciona?</h2>
+  <!-- Pasos: índices y tarjetas -->
+  <section id="como-funciona" class="container py-5">
+    <h2 class="text-center mb-4">Cómo funciona</h2>
+
+    <!-- Índices de pasos -->
+    <div class="d-flex justify-content-center gap-2 mb-4">
+      <button class="btn btn-outline-secondary" data-paso-trigger="1" data-paso-index="1" aria-controls="paso-1-text">Paso 1</button>
+      <button class="btn btn-outline-secondary" data-paso-trigger="2" data-paso-index="2" aria-controls="paso-2-text">Paso 2</button>
+      <button class="btn btn-outline-secondary" data-paso-trigger="3" data-paso-index="3" aria-controls="paso-3-text">Paso 3</button>
+    </div>
+
+    <!-- Tarjetas de pasos + textos -->
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card paso-card" data-paso-card="1">
+          <img src="recursos/paso1.png" class="card-img-top" alt="Paso 1: Elige tu modelo">
+          <div class="card-body">
+            <h5 class="card-title">Elige tu modelo</h5>
+            <p class="text-muted mb-0">Encuentra la base perfecta para tu estilo.</p>
+          </div>
+        </div>
+        <div id="paso-1-text" class="extra-text" data-paso-text="1" hidden aria-hidden="true">
+          Selecciona una mochila del catálogo o empieza desde la sección Personaliza.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card paso-card" data-paso-card="2">
+          <img src="recursos/paso2.png" class="card-img-top" alt="Paso 2: Personaliza tu estampado">
+          <div class="card-body">
+            <h5 class="card-title">Personaliza tu estampado</h5>
+            <p class="text-muted mb-0">Sube tu PNG y ajústalo con escala y opacidad.</p>
+          </div>
+        </div>
+        <div id="paso-2-text" class="extra-text" data-paso-text="2" hidden aria-hidden="true">
+          Tu diseño se recorta dentro de la silueta para un acabado limpio y estético.
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card paso-card" data-paso-card="3">
+          <img src="recursos/paso3.png" class="card-img-top" alt="Paso 3: Finaliza y recibe">
+          <div class="card-body">
+            <h5 class="card-title">Finaliza y recibe</h5>
+            <p class="text-muted mb-0">Agrega al carrito y confirma tu pedido.</p>
+          </div>
+        </div>
+        <div id="paso-3-text" class="extra-text" data-paso-text="3" hidden aria-hidden="true">
+          Confirmas la compra y te mostramos la confirmación en pantalla. ¡Listo!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo destacado en index -->
+  <section class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h2 class="mb-0">Catálogo</h2>
+      <a href="catalogo.html" class="btn btn-outline-secondary">Ver todo</a>
+    </div>
+
     <div class="row g-4">
+      <!-- Prototipo 1 -->
       <div class="col-md-4">
-        <div class="card paso-card h-100 text-center" data-text="Elige tu mochila base">
-          <img src="recursos/frontalb2.png" class="card-img-top paso-img" alt="Paso 1" />
-          <div class="card-body">
-            <h5 class="card-title">Paso 1</h5>
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb1.png" alt="Prototipo 1 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb1.png" alt="Prototipo 1 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab1.png" alt="Prototipo 1 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 1</h5>
+            <p>Mochila negra con estilo urbano.</p>
+            <p class="fw-bold">Precio: 250 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 1"
+              data-price="250"
+              data-img="recursos/frontalb1.png">
+              Agregar al carrito
+            </button>
           </div>
         </div>
       </div>
+
+      <!-- Prototipo 2 -->
       <div class="col-md-4">
-        <div class="card paso-card h-100 text-center" data-text="Personaliza tu diseño">
-          <img src="recursos/trio_de_mochilas-removebg-preview.png" class="card-img-top paso-img" alt="Paso 2" />
-          <div class="card-body">
-            <h5 class="card-title">Paso 2</h5>
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb2.png" alt="Prototipo 2 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb2.png" alt="Prototipo 2 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab2.png" alt="Prototipo 2 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 2</h5>
+            <p>Mochila blanca minimalista.</p>
+            <p class="fw-bold">Precio: 270 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 2"
+              data-price="270"
+              data-img="recursos/frontalb2.png">
+              Agregar al carrito
+            </button>
           </div>
         </div>
       </div>
+
+      <!-- Prototipo 3 -->
       <div class="col-md-4">
-        <div class="card paso-card h-100 text-center" data-text="Recibe tu mochila en casa">
-          <img src="recursos/rediseña.png" class="card-img-top paso-img" alt="Paso 3" />
-          <div class="card-body">
-            <h5 class="card-title">Paso 3</h5>
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb3.png" alt="Prototipo 3 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb3.png" alt="Prototipo 3 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab3.png" alt="Prototipo 3 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 3</h5>
+            <p>Mochila gris versátil.</p>
+            <p class="fw-bold">Precio: 260 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 3"
+              data-price="260"
+              data-img="recursos/frontalb3.png">
+              Agregar al carrito
+            </button>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
+  <!-- CTA hacia personalización -->
+  <section class="container py-5">
+    <div class="bg-white border rounded-3 p-4 p-md-5 text-center">
+      <h3 class="mb-2">¿Listo para crear la tuya?</h3>
+      <p class="text-muted mb-3">Sube tu estampado y pruébalo en tiempo real.</p>
+      <a href="personaliza.html" class="btn btn-dark">Personalizar ahora</a>
+    </div>
+  </section>
+
+  <!-- Carrito flotante -->
+  <button id="cart-button" class="cart-button" aria-label="Abrir carrito">
+    <i class="fas fa-shopping-cart"></i>
+  </button>
+  <div id="cart-popover" class="cart-popover d-none" role="dialog" aria-label="Carrito de compras">
+    <div class="cart-content">
+      <button class="close-btn" aria-label="Cerrar carrito">&times;</button>
+      <h5>Carrito de compras</h5>
+      <ul id="cart-items" class="list-group mb-3"></ul>
+      <p id="cart-total" class="fw-bold text-end">Total: 0 Bs</p>
+      <button class="btn btn-dark w-100">Finalizar compra</button>
+    </div>
+  </div>
+
+  <!-- Popover central de compra -->
+  <div id="purchase-overlay" class="purchase-overlay" aria-hidden="true">
+    <div class="purchase-popover" role="alertdialog" aria-live="assertive" aria-label="Confirmación de compra">
+      <h5>Gracias por su compra</h5>
+      <p>Su pedido ha sido registrado correctamente.</p>
+      <button type="button" id="close-purchase-overlay" class="btn btn-dark">Cerrar</button>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-black text-light py-4">
+  <footer class="bg-black text-light py-4 mt-5">
     <div class="container text-center">
-      <div class="mb-3">
-        <a href="https://facebook.com" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/59169447992" class="text-light me-3"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://youtube.com" class="text-light me-3"><i class="fab fa-youtube"></i></a>
-        <a href="https://tiktok.com" class="text-light"><i class="fab fa-tiktok"></i></a>
-      </div>
-      <p class="mb-1">Hecho con estilo y calidad en Cercado Cochabamba</p>
       <p class="mb-0">© 2025 KARGA Mochilas Personalizadas. Todos los derechos reservados.</p>
     </div>
   </footer>
-<!-- Botón flotante del carrito -->
-<button id="cart-button" class="cart-button">
-  <i class="fas fa-shopping-cart"></i>
-</button>
 
-<!-- Popover del carrito -->
-<div id="cart-popover" class="cart-popover d-none">
-  <div class="cart-content">
-    <span class="close-btn">&times;</span>
-    <h5>Carrito de compras</h5>
-    <ul id="cart-items" class="list-group mb-3"></ul>
-    <button class="btn btn-dark w-100">Finalizar compra</button>
-  </div>
-</div>
-
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
-  
 </body>
 </html>
-
