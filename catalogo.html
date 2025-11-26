@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo - KARGA Mochilas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-white text-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+    <a class="navbar-brand" href="index.html">
+      <img src="recursos/logo blanco.png" alt="Logo KARGA" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="catalogo.html">CATÁLOGO</a></li>
+        <li class="nav-item"><a class="nav-link" href="personaliza.html">PERSONALIZA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Catálogo -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Catálogo de mochilas</h2>
+    <div class="row g-4">
+
+      <!-- Prototipo 1 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb1.png" alt="Prototipo 1 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb1.png" alt="Prototipo 1 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab1.png" alt="Prototipo 1 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 1</h5>
+            <p>Mochila negra con estilo urbano.</p>
+            <p class="fw-bold">Precio: 250 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 1"
+              data-price="250"
+              data-img="recursos/frontalb1.png">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prototipo 2 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb2.png" alt="Prototipo 2 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb2.png" alt="Prototipo 2 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab2.png" alt="Prototipo 2 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 2</h5>
+            <p>Mochila blanca minimalista.</p>
+            <p class="fw-bold">Precio: 270 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 2"
+              data-price="270"
+              data-img="recursos/frontalb2.png">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prototipo 3 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-3 h-100 producto-card">
+          <div class="producto-img">
+            <img src="recursos/frontalb3.png" alt="Prototipo 3 - frontal" class="img-fluid vista active" />
+            <img src="recursos/lateralb3.png" alt="Prototipo 3 - lateral" class="img-fluid vista" />
+            <img src="recursos/traserab3.png" alt="Prototipo 3 - trasera" class="img-fluid vista" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Prototipo 3</h5>
+            <p>Mochila gris versátil.</p>
+            <p class="fw-bold">Precio: 260 Bs</p>
+            <button class="btn btn-dark w-100 add-to-cart"
+              data-name="Prototipo 3"
+              data-price="260"
+              data-img="recursos/frontalb3.png">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Botón flotante del carrito -->
+  <button id="cart-button" class="cart-button" aria-label="Abrir carrito">
+    <i class="fas fa-shopping-cart"></i>
+  </button>
+
+  <!-- Popover del carrito -->
+  <div id="cart-popover" class="cart-popover d-none">
+    <div class="cart-content">
+      <button class="close-btn" aria-label="Cerrar carrito">&times;</button>
+      <h5>Carrito de compras</h5>
+      <ul id="cart-items" class="list-group mb-3"></ul>
+      <p id="cart-total" class="fw-bold text-end">Total: 0 Bs</p>
+      <button class="btn btn-dark w-100">Finalizar compra</button>
+    </div>
+  </div>
+
+  <!-- Popover central de compra -->
+  <div id="purchase-overlay" class="purchase-overlay" aria-hidden="true">
+    <div class="purchase-popover" role="alertdialog" aria-live="assertive" aria-label="Confirmación de compra">
+      <h5>Gracias por su compra</h5>
+      <p>Su pedido ha sido registrado correctamente.</p>
+      <button type="button" id="close-purchase-overlay" class="btn btn-dark">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">© 2025 KARGA Mochilas Personalizadas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - KARGA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+    <a class="navbar-brand" href="index.html">
+      <img src="recursos/logo blanco.png" alt="Logo KARGA" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">CATÁLOGO</a></li>
+        <li class="nav-item"><a class="nav-link" href="personaliza.html">PERSONALIZA</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Formulario de contacto -->
+  <section class="contacto-section py-5 text-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form class="p-4 rounded-4 bg-dark shadow-sm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre completo</label>
+              <input type="text" id="nombre" class="form-control border-primary" placeholder="Tu nombre" required />
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo electrónico</label>
+              <input type="email" id="correo" class="form-control border-primary" placeholder="ejemplo@correo.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Número de teléfono (opcional)</label>
+              <input type="tel" id="telefono" class="form-control border-primary" placeholder="+591..." />
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Escriba su mensaje aquí</label>
+              <textarea id="mensaje" rows="5" class="form-control border-primary" placeholder="Tu mensaje..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="bg-black text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">© 2025 KARGA Mochilas Personalizadas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personaliza tu mochila - KARGA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+    <a class="navbar-brand" href="index.html">
+      <img src="recursos/logo blanco.png" alt="Logo KARGA" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menú de navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">CATÁLOGO</a></li>
+        <li class="nav-item"><a class="nav-link active" href="personaliza.html">PERSONALIZA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Personalizador -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Diseña tu mochila</h2>
+    <div class="row g-4 align-items-start">
+      
+      <!-- Vista de la mochila -->
+      <div class="col-md-6 text-center">
+        <div id="mochila-preview" class="mochila-preview">
+          <!-- Máscara y estampado encima -->
+          <div class="mochila-mask">
+            <div class="mochila-capa estampado-personal"></div>
+          </div>
+          <!-- Imagen base -->
+          <img id="mochila-img" src="recursos/frontalb3.png" class="img-fluid mochila-img" alt="Mochila base" />
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="col-md-6">
+        <form id="personaliza-form" class="p-3 border rounded-3 bg-white shadow-sm">
+          
+          <!-- Selección de modelo -->
+          <div class="mb-3">
+            <label for="modelo-select" class="form-label">Elige tu mochila</label>
+            <select id="modelo-select" class="form-select">
+              <option value="frontalb1.png">Modelo 1</option>
+              <option value="frontalb2.png">Modelo 2</option>
+              <option value="frontalb3.png" selected>Modelo 3</option>
+            </select>
+          </div>
+
+          <!-- Material -->
+          <div class="mb-3">
+            <label for="material-select" class="form-label">Material</label>
+            <select id="material-select" class="form-select">
+              <option value="cuero">Cuero</option>
+              <option value="lona">Lona</option>
+              <option value="nylon">Nylon</option>
+            </select>
+          </div>
+
+          <!-- Estampado personalizado -->
+          <div class="mb-3">
+            <label for="upload-estampado" class="form-label">Sube tu diseño (PNG)</label>
+            <input type="file" id="upload-estampado" accept="image/png" class="form-control" />
+            <div class="form-text">Usa PNG con transparencia para mejores resultados.</div>
+          </div>
+
+          <!-- Sliders -->
+          <div class="row g-3">
+            <div class="col-6">
+              <label for="scale-range" class="form-label">Escala estampado personal</label>
+              <input type="range" id="scale-range" min="50" max="200" value="100" class="form-range" />
+            </div>
+            <div class="col-6">
+              <label for="opacity-range" class="form-label">Opacidad estampado personal</label>
+              <input type="range" id="opacity-range" min="20" max="100" value="100" class="form-range" />
+            </div>
+          </div>
+
+          <!-- Botón -->
+          <button type="button" id="guardar-diseno" class="btn btn-dark w-100 mt-3">
+            Guardar diseño y agregar al carrito
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrito flotante -->
+  <button id="cart-button" class="cart-button" aria-label="Abrir carrito">
+    <i class="fas fa-shopping-cart"></i>
+  </button>
+  <div id="cart-popover" class="cart-popover d-none">
+    <div class="cart-content">
+      <button class="close-btn" aria-label="Cerrar carrito">&times;</button>
+      <h5>Carrito de compras</h5>
+      <ul id="cart-items" class="list-group mb-3"></ul>
+      <p id="cart-total" class="fw-bold text-end">Total: 0 Bs</p>
+      <button class="btn btn-dark w-100">Finalizar compra</button>
+    </div>
+  </div>
+
+  <!-- Popover central de compra -->
+  <div id="purchase-overlay" class="purchase-overlay" aria-hidden="true">
+    <div class="purchase-popover" role="alertdialog" aria-live="assertive" aria-label="Confirmación de compra">
+      <h5>Gracias por su compra</h5>
+      <p>Su pedido ha sido registrado correctamente.</p>
+      <button type="button" id="close-purchase-overlay" class="btn btn-dark">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">© 2025 KARGA Mochilas Personalizadas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

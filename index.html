@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KARGA Mochilas Personalizadas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-white text-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+    <a class="navbar-brand" href="index.html">
+      <img src="recursos/logo blanco.png" alt="Logo KARGA" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">CATÁLOGO</a></li>
+        <li class="nav-item"><a class="nav-link" href="personaliza.html">PERSONALIZA</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+<section class="hero-section d-flex align-items-center text-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="recursos/frontal.png" alt="Mochila personalizada" class="img-fluid" />
+      </div>
+      <div class="col-md-6 text-center text-md-start">
+        <h1 class="display-5 fw-bold">
+          DISEÑA TU MOCHILA<br>
+          <span class="fw-normal">LLEVA TU ESTILO CONTIGO</span>
+        </h1>
+        <a href="personaliza.html" class="btn btn-dark mt-4 px-4 py-2 rounded-pill">¡EMPIEZA A PERSONALIZAR!</a>
+        <a href="#pasos" class="btn btn-outline-light mt-3 px-4 py-2 rounded-pill">Ver cómo funciona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Cómo funciona -->
+  <section id="pasos" class="container py-5">
+    <h2 class="text-center mb-4">¿Cómo funciona?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card paso-card h-100 text-center" data-text="Elige tu mochila base">
+          <img src="recursos/frontalb2.png" class="card-img-top paso-img" alt="Paso 1" />
+          <div class="card-body">
+            <h5 class="card-title">Paso 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card paso-card h-100 text-center" data-text="Personaliza tu diseño">
+          <img src="recursos/trio_de_mochilas-removebg-preview.png" class="card-img-top paso-img" alt="Paso 2" />
+          <div class="card-body">
+            <h5 class="card-title">Paso 2</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card paso-card h-100 text-center" data-text="Recibe tu mochila en casa">
+          <img src="recursos/rediseña.png" class="card-img-top paso-img" alt="Paso 3" />
+          <div class="card-body">
+            <h5 class="card-title">Paso 3</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="bg-black text-light py-4">
+    <div class="container text-center">
+      <div class="mb-3">
+        <a href="https://facebook.com" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/59169447992" class="text-light me-3"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com" class="text-light me-3"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com" class="text-light"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p class="mb-1">Hecho con estilo y calidad en Cercado Cochabamba</p>
+      <p class="mb-0">© 2025 KARGA Mochilas Personalizadas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<!-- Botón flotante del carrito -->
+<button id="cart-button" class="cart-button">
+  <i class="fas fa-shopping-cart"></i>
+</button>
+
+<!-- Popover del carrito -->
+<div id="cart-popover" class="cart-popover d-none">
+  <div class="cart-content">
+    <span class="close-btn">&times;</span>
+    <h5>Carrito de compras</h5>
+    <ul id="cart-items" class="list-group mb-3"></ul>
+    <button class="btn btn-dark w-100">Finalizar compra</button>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
